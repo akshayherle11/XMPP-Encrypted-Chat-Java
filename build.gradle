@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+        implementation group: 'org.igniterealtime.smack', name: 'smack-java8', version: '4.4.5'
+    // https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-tcp
+        implementation group: 'org.igniterealtime.smack', name: 'smack-tcp', version: '4.4.5'
+    // https://mvnrepository.com/artifact/org.igniterealtime.smack/smack-extensions
+        implementation group: 'org.igniterealtime.smack', name: 'smack-extensions', version: '4.4.5'
+        // Optional for XMPP-IM (RFC 6121) support (Roster, Threaded Chats, …)
+        implementation "org.igniterealtime.smack:smack-im:4.4.5"
+        implementation "org.igniterealtime.smack:smack-experimental:4.4.5"
+   }
+
+test {
+    useJUnitPlatform()
+}
